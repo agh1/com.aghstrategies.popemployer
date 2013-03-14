@@ -16,7 +16,7 @@
     <ver>4.3</ver>
   </compatibility>
   <comments>This is meant to address problems in CRM-10128 (leaving the employer blank on a profile will unset your current employer if you have one) and problems of people typing organization names different ways.</comments>
-  <documentation>http://aghstrategies.com/popemployer/documentation</documentation>
+  <documentation><url desc="documentation">http://aghstrategies.com/popemployer/documentation</url></documentation>
   <civix>
     <namespace>CRM/Popemployer</namespace>
   </civix>
