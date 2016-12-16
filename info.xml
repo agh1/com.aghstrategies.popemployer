@@ -8,14 +8,12 @@
     <author>Andrew Hunt</author>
     <email>andrew@aghstrategies.com</email>
   </maintainer>
-  <releaseDate>2013-03-14</releaseDate>
-  <version>1.0</version>
+  <releaseDate>2016-12-16</releaseDate>
+  <version>2.0</version>
   <develStage>stable</develStage>
   <compatibility>
-    <ver>4.1.6</ver>
-    <ver>4.2</ver>
-    <ver>4.3</ver>
     <ver>4.6</ver>
+    <ver>4.7</ver>
   </compatibility>
   <comments>This is meant to address problems in CRM-10128 (leaving the employer blank on a profile will unset your current employer if you have one) and problems of people typing organization names different ways.</comments>
   <civix>
