@@ -1,15 +1,29 @@
 <?php
 
+/**
+ * Wrapper around Contact.getvalue for getting employer name given an email
+ *
+ * @param array $params
+ *   Must contain an `email` key.
+ *
+ * @return mixed
+ *   The employer name, or TRUE if nothing found
+ */
 function civicrm_api3_popemployer_get($params) {
   if (array_key_exists('email', $params)) {
-    $matches = civicrm_api("Contact","get", array ('version' => '3','sequential' =>'1', 'return' =>'current_employer,email', 'email' =>$params['email'], 'contact_type' => 'Individual'));
-    if (!$matches['is_error'] && is_array($matches['values'])) {
-      require_once 'CRM/Utils/Array.php';
-      foreach ($matches['values'] as $match) {
-        if ($match['email'] != $params['email']) { continue; }
-        return CRM_Utils_Array::value('current_employer',$match);
-      }
+    try {
+      return civicrm_api3('Contact', 'getvalue', array(
+        'return' => "current_employer",
+        'email' => $params['email'],
+        'contact_type' => 'Individual',
+        'employer_id' => array('IS NOT NULL' => 1),
+        'options' => array('limit' => 1),
+      ));
+    }
+    catch (CiviCRM_API3_Exception $e) {
+      // Probably no big deal, just no contact found.
+      return TRUE;
     }
   }
-  return true;
+  return TRUE;
 }
