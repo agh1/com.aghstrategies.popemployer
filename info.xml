@@ -15,6 +15,7 @@
     <ver>4.1.6</ver>
     <ver>4.2</ver>
     <ver>4.3</ver>
+    <ver>4.6</ver>
   </compatibility>
   <comments>This is meant to address problems in CRM-10128 (leaving the employer blank on a profile will unset your current employer if you have one) and problems of people typing organization names different ways.</comments>
   <civix>
