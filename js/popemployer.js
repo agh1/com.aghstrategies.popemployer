@@ -13,24 +13,24 @@ CRM.$(function($) {
     });
     $clickToEdit.click(employerEdit);
 
-    var waitToSearch = setTimeout(function() {
-      runSearch($('#crm-container input[name^="email-"]').val());
-    }, 750);
+    var first = true;
     $('#crm-container input[name^="email-"]').each( function() {
-      $(this).change( function() {
-        prepSearch($(this).val());
-      });
-      $(this).keyup( function() {
-        prepSearch($(this).val());
+      var $emailField = $(this);
+
+      if (first) {
+        var waitToSearch = setTimeout(function() {
+          runSearch($('#crm-container input[name^="email-"]').val());
+        }, 750);
+        first = false;
+      }
+
+      $emailField.bind('change keyup', function() {
+        clearTimeout(waitToSearch);
+        waitToSearch = setTimeout(function() {
+          runSearch($emailField.val());
+        }, 750);
       });
     });
-  }
-
-  function prepSearch(email) {
-    clearTimeout(waitToSearch);
-    waitToSearch = setTimeout(function() {
-      runSearch(email);
-    }, 750);
   }
 
   function runSearch(email) {
