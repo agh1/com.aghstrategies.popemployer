@@ -8,6 +8,9 @@
     <author>Andrew Hunt</author>
     <email>andrew@aghstrategies.com</email>
   </maintainer>
+  <urls>
+    <url desc="documentation">https://aghstrategies.com/popemployer/documentation</url>
+  </urls>
   <releaseDate>2016-12-16</releaseDate>
   <version>2.0</version>
   <develStage>stable</develStage>
