@@ -9,3 +9,5 @@ This is meant to address problems in
 [CRM-10128](https://issues.civicrm.org/jira/browse/CRM-10128) (leaving the
 employer blank on a profile will unset your current employer if you have one)
 and problems of people typing organization names different ways.
+
+![Screenshot of populated employer](images/popEmp.png)
